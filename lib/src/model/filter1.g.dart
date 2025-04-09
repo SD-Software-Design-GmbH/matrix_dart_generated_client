@@ -1,0 +1,246 @@
+// GENERATED CODE - DO NOT MODIFY BY HAND
+
+part of 'filter1.dart';
+
+// **************************************************************************
+// BuiltValueGenerator
+// **************************************************************************
+
+class _$Filter1 extends Filter1 {
+  @override
+  final int? limit;
+  @override
+  final BuiltList<String>? notSenders;
+  @override
+  final BuiltList<String>? notTypes;
+  @override
+  final BuiltList<String>? senders;
+  @override
+  final BuiltList<String>? types;
+  @override
+  final bool? containsUrl;
+  @override
+  final bool? includeRedundantMembers;
+  @override
+  final bool? lazyLoadMembers;
+  @override
+  final BuiltList<String>? notRooms;
+  @override
+  final BuiltList<String>? rooms;
+  @override
+  final bool? unreadThreadNotifications;
+
+  factory _$Filter1([void Function(Filter1Builder)? updates]) =>
+      (new Filter1Builder()..update(updates))._build();
+
+  _$Filter1._(
+      {this.limit,
+      this.notSenders,
+      this.notTypes,
+      this.senders,
+      this.types,
+      this.containsUrl,
+      this.includeRedundantMembers,
+      this.lazyLoadMembers,
+      this.notRooms,
+      this.rooms,
+      this.unreadThreadNotifications})
+      : super._();
+
+  @override
+  Filter1 rebuild(void Function(Filter1Builder) updates) =>
+      (toBuilder()..update(updates)).build();
+
+  @override
+  Filter1Builder toBuilder() => new Filter1Builder()..replace(this);
+
+  @override
+  bool operator ==(Object other) {
+    if (identical(other, this)) return true;
+    return other is Filter1 &&
+        limit == other.limit &&
+        notSenders == other.notSenders &&
+        notTypes == other.notTypes &&
+        senders == other.senders &&
+        types == other.types &&
+        containsUrl == other.containsUrl &&
+        includeRedundantMembers == other.includeRedundantMembers &&
+        lazyLoadMembers == other.lazyLoadMembers &&
+        notRooms == other.notRooms &&
+        rooms == other.rooms &&
+        unreadThreadNotifications == other.unreadThreadNotifications;
+  }
+
+  @override
+  int get hashCode {
+    var _$hash = 0;
+    _$hash = $jc(_$hash, limit.hashCode);
+    _$hash = $jc(_$hash, notSenders.hashCode);
+    _$hash = $jc(_$hash, notTypes.hashCode);
+    _$hash = $jc(_$hash, senders.hashCode);
+    _$hash = $jc(_$hash, types.hashCode);
+    _$hash = $jc(_$hash, containsUrl.hashCode);
+    _$hash = $jc(_$hash, includeRedundantMembers.hashCode);
+    _$hash = $jc(_$hash, lazyLoadMembers.hashCode);
+    _$hash = $jc(_$hash, notRooms.hashCode);
+    _$hash = $jc(_$hash, rooms.hashCode);
+    _$hash = $jc(_$hash, unreadThreadNotifications.hashCode);
+    _$hash = $jf(_$hash);
+    return _$hash;
+  }
+
+  @override
+  String toString() {
+    return (newBuiltValueToStringHelper(r'Filter1')
+          ..add('limit', limit)
+          ..add('notSenders', notSenders)
+          ..add('notTypes', notTypes)
+          ..add('senders', senders)
+          ..add('types', types)
+          ..add('containsUrl', containsUrl)
+          ..add('includeRedundantMembers', includeRedundantMembers)
+          ..add('lazyLoadMembers', lazyLoadMembers)
+          ..add('notRooms', notRooms)
+          ..add('rooms', rooms)
+          ..add('unreadThreadNotifications', unreadThreadNotifications))
+        .toString();
+  }
+}
+
+class Filter1Builder implements Builder<Filter1, Filter1Builder> {
+  _$Filter1? _$v;
+
+  int? _limit;
+  int? get limit => _$this._limit;
+  set limit(int? limit) => _$this._limit = limit;
+
+  ListBuilder<String>? _notSenders;
+  ListBuilder<String> get notSenders =>
+      _$this._notSenders ??= new ListBuilder<String>();
+  set notSenders(ListBuilder<String>? notSenders) =>
+      _$this._notSenders = notSenders;
+
+  ListBuilder<String>? _notTypes;
+  ListBuilder<String> get notTypes =>
+      _$this._notTypes ??= new ListBuilder<String>();
+  set notTypes(ListBuilder<String>? notTypes) => _$this._notTypes = notTypes;
+
+  ListBuilder<String>? _senders;
+  ListBuilder<String> get senders =>
+      _$this._senders ??= new ListBuilder<String>();
+  set senders(ListBuilder<String>? senders) => _$this._senders = senders;
+
+  ListBuilder<String>? _types;
+  ListBuilder<String> get types => _$this._types ??= new ListBuilder<String>();
+  set types(ListBuilder<String>? types) => _$this._types = types;
+
+  bool? _containsUrl;
+  bool? get containsUrl => _$this._containsUrl;
+  set containsUrl(bool? containsUrl) => _$this._containsUrl = containsUrl;
+
+  bool? _includeRedundantMembers;
+  bool? get includeRedundantMembers => _$this._includeRedundantMembers;
+  set includeRedundantMembers(bool? includeRedundantMembers) =>
+      _$this._includeRedundantMembers = includeRedundantMembers;
+
+  bool? _lazyLoadMembers;
+  bool? get lazyLoadMembers => _$this._lazyLoadMembers;
+  set lazyLoadMembers(bool? lazyLoadMembers) =>
+      _$this._lazyLoadMembers = lazyLoadMembers;
+
+  ListBuilder<String>? _notRooms;
+  ListBuilder<String> get notRooms =>
+      _$this._notRooms ??= new ListBuilder<String>();
+  set notRooms(ListBuilder<String>? notRooms) => _$this._notRooms = notRooms;
+
+  ListBuilder<String>? _rooms;
+  ListBuilder<String> get rooms => _$this._rooms ??= new ListBuilder<String>();
+  set rooms(ListBuilder<String>? rooms) => _$this._rooms = rooms;
+
+  bool? _unreadThreadNotifications;
+  bool? get unreadThreadNotifications => _$this._unreadThreadNotifications;
+  set unreadThreadNotifications(bool? unreadThreadNotifications) =>
+      _$this._unreadThreadNotifications = unreadThreadNotifications;
+
+  Filter1Builder() {
+    Filter1._defaults(this);
+  }
+
+  Filter1Builder get _$this {
+    final $v = _$v;
+    if ($v != null) {
+      _limit = $v.limit;
+      _notSenders = $v.notSenders?.toBuilder();
+      _notTypes = $v.notTypes?.toBuilder();
+      _senders = $v.senders?.toBuilder();
+      _types = $v.types?.toBuilder();
+      _containsUrl = $v.containsUrl;
+      _includeRedundantMembers = $v.includeRedundantMembers;
+      _lazyLoadMembers = $v.lazyLoadMembers;
+      _notRooms = $v.notRooms?.toBuilder();
+      _rooms = $v.rooms?.toBuilder();
+      _unreadThreadNotifications = $v.unreadThreadNotifications;
+      _$v = null;
+    }
+    return this;
+  }
+
+  @override
+  void replace(Filter1 other) {
+    ArgumentError.checkNotNull(other, 'other');
+    _$v = other as _$Filter1;
+  }
+
+  @override
+  void update(void Function(Filter1Builder)? updates) {
+    if (updates != null) updates(this);
+  }
+
+  @override
+  Filter1 build() => _build();
+
+  _$Filter1 _build() {
+    _$Filter1 _$result;
+    try {
+      _$result = _$v ??
+          new _$Filter1._(
+            limit: limit,
+            notSenders: _notSenders?.build(),
+            notTypes: _notTypes?.build(),
+            senders: _senders?.build(),
+            types: _types?.build(),
+            containsUrl: containsUrl,
+            includeRedundantMembers: includeRedundantMembers,
+            lazyLoadMembers: lazyLoadMembers,
+            notRooms: _notRooms?.build(),
+            rooms: _rooms?.build(),
+            unreadThreadNotifications: unreadThreadNotifications,
+          );
+    } catch (_) {
+      late String _$failedField;
+      try {
+        _$failedField = 'notSenders';
+        _notSenders?.build();
+        _$failedField = 'notTypes';
+        _notTypes?.build();
+        _$failedField = 'senders';
+        _senders?.build();
+        _$failedField = 'types';
+        _types?.build();
+
+        _$failedField = 'notRooms';
+        _notRooms?.build();
+        _$failedField = 'rooms';
+        _rooms?.build();
+      } catch (e) {
+        throw new BuiltValueNestedFieldError(
+            r'Filter1', _$failedField, e.toString());
+      }
+      rethrow;
+    }
+    replace(_$result);
+    return _$result;
+  }
+}
+
+// ignore_for_file: deprecated_member_use_from_same_package,type=lint
