@@ -1067,7 +1067,7 @@ class MediaApi {
   /// Returns a [Future] containing a [Response] with a [UploadContent200Response] as data
   /// Throws [DioException] if API call or serialization fails
   Future<Response<UploadContent200Response>> uploadContent({ 
-    FormData? body,
+    dynamic body,
     String? contentType,
     String? filename,
     CancelToken? cancelToken,
