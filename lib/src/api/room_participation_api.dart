@@ -2157,7 +2157,7 @@ class RoomParticipationApi {
 
     final _response = await _dio.request<Object>(
       _path,
-      data: _bodyData,
+      data: (_bodyData as MapJsonObject).asMap,
       options: _options,
       cancelToken: cancelToken,
       onSendProgress: onSendProgress,
