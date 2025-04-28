@@ -70,9 +70,11 @@ class RoomParticipationApi {
   }) async {
     final _path = r'/_matrix/client/v3/sync';
     final int buffer = 10000; // add a buffer
+    var duration = Duration(milliseconds: (timeout ?? 10000) + buffer);
     final _options = Options(
       method: r'GET',
-      receiveTimeout: Duration(milliseconds: (timeout ?? 10000) + buffer),
+      sendTimeout: duration,
+      receiveTimeout: duration,
       headers: <String, dynamic>{
         ...?headers,
       },
