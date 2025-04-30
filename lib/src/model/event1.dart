@@ -24,6 +24,9 @@ abstract class Event1 implements Built<Event1, Event1Builder> {
   @BuiltValueField(wireName: r'type')
   String get type;
 
+  @BuiltValueField(wireName: r'sender')
+  String? get sender;
+
   Event1._();
 
   factory Event1([void updates(Event1Builder b)]) = _$Event1;
@@ -55,6 +58,11 @@ class _$Event1Serializer implements PrimitiveSerializer<Event1> {
     yield r'type';
     yield serializers.serialize(
       object.type,
+      specifiedType: const FullType(String),
+    );
+    yield r'sender';
+    yield serializers.serialize(
+      object.sender,
       specifiedType: const FullType(String),
     );
   }
@@ -93,6 +101,13 @@ class _$Event1Serializer implements PrimitiveSerializer<Event1> {
             specifiedType: const FullType(String),
           ) as String;
           result.type = valueDes;
+          break;
+        case r'sender':
+          final valueDes = serializers.deserialize(
+            value,
+            specifiedType: const FullType(String),
+          ) as String;
+          result.sender = valueDes;
           break;
         default:
           unhandled.add(key);

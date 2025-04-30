@@ -11,11 +11,14 @@ class _$Event1 extends Event1 {
   final JsonObject content;
   @override
   final String type;
+  @override
+  final String? sender;
 
   factory _$Event1([void Function(Event1Builder)? updates]) =>
       (new Event1Builder()..update(updates))._build();
 
-  _$Event1._({required this.content, required this.type}) : super._() {
+  _$Event1._({required this.content, required this.type, this.sender})
+    : super._() {
     BuiltValueNullFieldError.checkNotNull(content, r'Event1', 'content');
     BuiltValueNullFieldError.checkNotNull(type, r'Event1', 'type');
   }
@@ -46,7 +49,8 @@ class _$Event1 extends Event1 {
   String toString() {
     return (newBuiltValueToStringHelper(r'Event1')
           ..add('content', content)
-          ..add('type', type))
+          ..add('type', type)
+          ..add('sender', sender))
         .toString();
   }
 }
@@ -55,12 +59,22 @@ class Event1Builder implements Builder<Event1, Event1Builder> {
   _$Event1? _$v;
 
   JsonObject? _content;
+
   JsonObject? get content => _$this._content;
+
   set content(JsonObject? content) => _$this._content = content;
 
   String? _type;
+
   String? get type => _$this._type;
+
   set type(String? type) => _$this._type = type;
+
+  String? _sender;
+
+  String? get sender => _$this._sender;
+
+  set sender(String? type) => _$this._sender = type;
 
   Event1Builder() {
     Event1._defaults(this);
@@ -71,6 +85,7 @@ class Event1Builder implements Builder<Event1, Event1Builder> {
     if ($v != null) {
       _content = $v.content;
       _type = $v.type;
+      _sender = $v.sender;
       _$v = null;
     }
     return this;
@@ -91,11 +106,16 @@ class Event1Builder implements Builder<Event1, Event1Builder> {
   Event1 build() => _build();
 
   _$Event1 _build() {
-    final _$result = _$v ??
+    final _$result =
+        _$v ??
         new _$Event1._(
           content: BuiltValueNullFieldError.checkNotNull(
-              content, r'Event1', 'content'),
+            content,
+            r'Event1',
+            'content',
+          ),
           type: BuiltValueNullFieldError.checkNotNull(type, r'Event1', 'type'),
+          sender: _sender,
         );
     replace(_$result);
     return _$result;
