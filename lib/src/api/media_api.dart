@@ -1276,6 +1276,8 @@ class MediaApi {
   /// * [validateStatus] - A [ValidateStatus] callback that can be used to determine request success based on the HTTP status of the response
   /// * [onSendProgress] - A [ProgressCallback] that can be used to get the send progress
   /// * [onReceiveProgress] - A [ProgressCallback] that can be used to get the receive progress
+  /// * [receiveTimeout] - The maximum number of milliseconds that the client is willing to wait to start receiving data, in the case that the content has not yet been uploaded.
+  /// The default value is 20000 (20 seconds). The content repository MAY respond before the timeout.
   ///
   /// Returns a [Future] containing a [Response] with a [UploadContent200Response] as data
   /// Throws [DioException] if API call or serialization fails
@@ -1289,6 +1291,7 @@ class MediaApi {
     ValidateStatus? validateStatus,
     ProgressCallback? onSendProgress,
     ProgressCallback? onReceiveProgress,
+    Duration? receiveTimeout,
   }) async {
     final _path = r'/_matrix/media/v3/upload';
     final _options = Options(
@@ -1311,6 +1314,7 @@ class MediaApi {
       },
       contentType: contentType,
       validateStatus: validateStatus,
+      receiveTimeout: receiveTimeout ?? Duration(seconds: 20),
     );
 
     final _queryParameters = <String, dynamic>{
