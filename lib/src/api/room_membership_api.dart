@@ -442,7 +442,7 @@ class RoomMembershipApi {
     ProgressCallback? onSendProgress,
     ProgressCallback? onReceiveProgress,
   }) async {
-    final _path = r'/_matrix/client/v3/rooms/{roomId}/invite '.replaceAll('{' r'roomId' '}', encodeQueryParameter(_serializers, roomId, const FullType(String)).toString());
+    final _path = r'/_matrix/client/v3/rooms/{roomId}/invite'.replaceAll('{' r'roomId' '}', encodeQueryParameter(_serializers, roomId, const FullType(String)).toString());
     final _options = Options(
       method: r'POST',
       headers: <String, dynamic>{
