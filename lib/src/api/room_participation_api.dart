@@ -1105,6 +1105,8 @@ class RoomParticipationApi {
     ValidateStatus? validateStatus,
     ProgressCallback? onSendProgress,
     ProgressCallback? onReceiveProgress,
+    Duration? receiveTimeout,
+    Duration? sendTimeout,
   }) async {
     final _path = r'/_matrix/client/v3/rooms/{roomId}/messages'.replaceAll(
         '{' r'roomId' '}',
@@ -1132,6 +1134,8 @@ class RoomParticipationApi {
         ...?extra,
       },
       validateStatus: validateStatus,
+      receiveTimeout: receiveTimeout,
+      sendTimeout: sendTimeout,
     );
 
     final _queryParameters = <String, dynamic>{
@@ -1623,6 +1627,8 @@ class RoomParticipationApi {
     ValidateStatus? validateStatus,
     ProgressCallback? onSendProgress,
     ProgressCallback? onReceiveProgress,
+    Duration? receiveTimeout,
+    Duration? sendTimeout,
   }) async {
     final _path =
         r'/_matrix/client/v3/rooms/{roomId}/receipt/{receiptType}/{eventId}'
@@ -1664,6 +1670,8 @@ class RoomParticipationApi {
       },
       contentType: 'application/json',
       validateStatus: validateStatus,
+      receiveTimeout: receiveTimeout,
+      sendTimeout: sendTimeout,
     );
 
     dynamic _bodyData;
@@ -2222,6 +2230,8 @@ class RoomParticipationApi {
     ValidateStatus? validateStatus,
     ProgressCallback? onSendProgress,
     ProgressCallback? onReceiveProgress,
+    Duration? receiveTimeout,
+    Duration? sendTimeout,
   }) async {
     final _path = r'/_matrix/client/v3/rooms/{roomId}/typing/{userId}'
         .replaceAll(
@@ -2255,6 +2265,8 @@ class RoomParticipationApi {
       },
       contentType: 'application/json',
       validateStatus: validateStatus,
+      receiveTimeout: receiveTimeout,
+      sendTimeout: sendTimeout,
     );
 
     dynamic _bodyData;
