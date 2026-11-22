@@ -16,25 +16,27 @@ class _$UnsignedData extends UnsignedData {
   @override
   final JsonObject? redactedBecause;
   @override
+  final JsonObject? mRelations;
+  @override
   final String? transactionId;
 
   factory _$UnsignedData([void Function(UnsignedDataBuilder)? updates]) =>
-      (new UnsignedDataBuilder()..update(updates))._build();
+      (UnsignedDataBuilder()..update(updates))._build();
 
-  _$UnsignedData._(
-      {this.age,
-      this.membership,
-      this.prevContent,
-      this.redactedBecause,
-      this.transactionId})
-      : super._();
-
+  _$UnsignedData._({
+    this.age,
+    this.membership,
+    this.prevContent,
+    this.redactedBecause,
+    this.mRelations,
+    this.transactionId,
+  }) : super._();
   @override
   UnsignedData rebuild(void Function(UnsignedDataBuilder) updates) =>
       (toBuilder()..update(updates)).build();
 
   @override
-  UnsignedDataBuilder toBuilder() => new UnsignedDataBuilder()..replace(this);
+  UnsignedDataBuilder toBuilder() => UnsignedDataBuilder()..replace(this);
 
   @override
   bool operator ==(Object other) {
@@ -44,6 +46,7 @@ class _$UnsignedData extends UnsignedData {
         membership == other.membership &&
         prevContent == other.prevContent &&
         redactedBecause == other.redactedBecause &&
+        mRelations == other.mRelations &&
         transactionId == other.transactionId;
   }
 
@@ -54,6 +57,7 @@ class _$UnsignedData extends UnsignedData {
     _$hash = $jc(_$hash, membership.hashCode);
     _$hash = $jc(_$hash, prevContent.hashCode);
     _$hash = $jc(_$hash, redactedBecause.hashCode);
+    _$hash = $jc(_$hash, mRelations.hashCode);
     _$hash = $jc(_$hash, transactionId.hashCode);
     _$hash = $jf(_$hash);
     return _$hash;
@@ -66,6 +70,7 @@ class _$UnsignedData extends UnsignedData {
           ..add('membership', membership)
           ..add('prevContent', prevContent)
           ..add('redactedBecause', redactedBecause)
+          ..add('mRelations', mRelations)
           ..add('transactionId', transactionId))
         .toString();
   }
@@ -92,6 +97,10 @@ class UnsignedDataBuilder
   set redactedBecause(JsonObject? redactedBecause) =>
       _$this._redactedBecause = redactedBecause;
 
+  JsonObject? _mRelations;
+  JsonObject? get mRelations => _$this._mRelations;
+  set mRelations(JsonObject? mRelations) => _$this._mRelations = mRelations;
+
   String? _transactionId;
   String? get transactionId => _$this._transactionId;
   set transactionId(String? transactionId) =>
@@ -108,6 +117,7 @@ class UnsignedDataBuilder
       _membership = $v.membership;
       _prevContent = $v.prevContent;
       _redactedBecause = $v.redactedBecause;
+      _mRelations = $v.mRelations;
       _transactionId = $v.transactionId;
       _$v = null;
     }
@@ -116,7 +126,6 @@ class UnsignedDataBuilder
 
   @override
   void replace(UnsignedData other) {
-    ArgumentError.checkNotNull(other, 'other');
     _$v = other as _$UnsignedData;
   }
 
@@ -129,12 +138,14 @@ class UnsignedDataBuilder
   UnsignedData build() => _build();
 
   _$UnsignedData _build() {
-    final _$result = _$v ??
-        new _$UnsignedData._(
+    final _$result =
+        _$v ??
+        _$UnsignedData._(
           age: age,
           membership: membership,
           prevContent: prevContent,
           redactedBecause: redactedBecause,
+          mRelations: mRelations,
           transactionId: transactionId,
         );
     replace(_$result);

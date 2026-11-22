@@ -35,6 +35,12 @@ abstract class UnsignedData implements Built<UnsignedData, UnsignedDataBuilder> 
   @BuiltValueField(wireName: r'redacted_because')
   JsonObject? get redactedBecause;
 
+  /// Aggregations of events related to this event, bundled by the server,
+  /// e.g. the latest edit under `m.replace` or the thread summary under
+  /// `m.thread`. See https://spec.matrix.org/v1.13/client-server-api/#aggregations-of-child-events
+  @BuiltValueField(wireName: r'm.relations')
+  JsonObject? get mRelations;
+
   /// The client-supplied [transaction ID](https://spec.matrix.org/v1.13/client-server-api/#transaction-identifiers), for example, provided via `PUT /_matrix/client/v3/rooms/{roomId}/send/{eventType}/{txnId}`, if the client being given the event is the same one which sent it. 
   @BuiltValueField(wireName: r'transaction_id')
   String? get transactionId;
@@ -87,6 +93,13 @@ class _$UnsignedDataSerializer implements PrimitiveSerializer<UnsignedData> {
       yield r'redacted_because';
       yield serializers.serialize(
         object.redactedBecause,
+        specifiedType: const FullType(JsonObject),
+      );
+    }
+    if (object.mRelations != null) {
+      yield r'm.relations';
+      yield serializers.serialize(
+        object.mRelations,
         specifiedType: const FullType(JsonObject),
       );
     }
@@ -154,6 +167,14 @@ class _$UnsignedDataSerializer implements PrimitiveSerializer<UnsignedData> {
             specifiedType: const FullType(String),
           ) as String;
           result.transactionId = valueDes;
+          break;
+        case r'm.relations':
+          final valueDes = serializers.deserialize(
+            value,
+            specifiedType: const FullType.nullable(JsonObject),
+          ) as JsonObject?;
+          if (valueDes == null) continue;
+          result.mRelations = valueDes;
           break;
         default:
           unhandled.add(key);

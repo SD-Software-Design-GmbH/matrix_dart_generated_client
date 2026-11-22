@@ -9,33 +9,37 @@ part of 'client_event_all_of_unsigned.dart';
 class _$ClientEventAllOfUnsigned extends ClientEventAllOfUnsigned {
   @override
   final JsonObject? redactedBecause;
+  @override
+  final JsonObject? mRelations;
 
-  factory _$ClientEventAllOfUnsigned(
-          [void Function(ClientEventAllOfUnsignedBuilder)? updates]) =>
-      (new ClientEventAllOfUnsignedBuilder()..update(updates))._build();
+  factory _$ClientEventAllOfUnsigned([
+    void Function(ClientEventAllOfUnsignedBuilder)? updates,
+  ]) => (ClientEventAllOfUnsignedBuilder()..update(updates))._build();
 
-  _$ClientEventAllOfUnsigned._({this.redactedBecause}) : super._();
-
+  _$ClientEventAllOfUnsigned._({this.redactedBecause, this.mRelations})
+    : super._();
   @override
   ClientEventAllOfUnsigned rebuild(
-          void Function(ClientEventAllOfUnsignedBuilder) updates) =>
-      (toBuilder()..update(updates)).build();
+    void Function(ClientEventAllOfUnsignedBuilder) updates,
+  ) => (toBuilder()..update(updates)).build();
 
   @override
   ClientEventAllOfUnsignedBuilder toBuilder() =>
-      new ClientEventAllOfUnsignedBuilder()..replace(this);
+      ClientEventAllOfUnsignedBuilder()..replace(this);
 
   @override
   bool operator ==(Object other) {
     if (identical(other, this)) return true;
     return other is ClientEventAllOfUnsigned &&
-        redactedBecause == other.redactedBecause;
+        redactedBecause == other.redactedBecause &&
+        mRelations == other.mRelations;
   }
 
   @override
   int get hashCode {
     var _$hash = 0;
     _$hash = $jc(_$hash, redactedBecause.hashCode);
+    _$hash = $jc(_$hash, mRelations.hashCode);
     _$hash = $jf(_$hash);
     return _$hash;
   }
@@ -43,7 +47,8 @@ class _$ClientEventAllOfUnsigned extends ClientEventAllOfUnsigned {
   @override
   String toString() {
     return (newBuiltValueToStringHelper(r'ClientEventAllOfUnsigned')
-          ..add('redactedBecause', redactedBecause))
+          ..add('redactedBecause', redactedBecause)
+          ..add('mRelations', mRelations))
         .toString();
   }
 }
@@ -58,6 +63,10 @@ class ClientEventAllOfUnsignedBuilder
   set redactedBecause(JsonObject? redactedBecause) =>
       _$this._redactedBecause = redactedBecause;
 
+  JsonObject? _mRelations;
+  JsonObject? get mRelations => _$this._mRelations;
+  set mRelations(JsonObject? mRelations) => _$this._mRelations = mRelations;
+
   ClientEventAllOfUnsignedBuilder() {
     ClientEventAllOfUnsigned._defaults(this);
   }
@@ -66,6 +75,7 @@ class ClientEventAllOfUnsignedBuilder
     final $v = _$v;
     if ($v != null) {
       _redactedBecause = $v.redactedBecause;
+      _mRelations = $v.mRelations;
       _$v = null;
     }
     return this;
@@ -73,7 +83,6 @@ class ClientEventAllOfUnsignedBuilder
 
   @override
   void replace(ClientEventAllOfUnsigned other) {
-    ArgumentError.checkNotNull(other, 'other');
     _$v = other as _$ClientEventAllOfUnsigned;
   }
 
@@ -86,9 +95,11 @@ class ClientEventAllOfUnsignedBuilder
   ClientEventAllOfUnsigned build() => _build();
 
   _$ClientEventAllOfUnsigned _build() {
-    final _$result = _$v ??
-        new _$ClientEventAllOfUnsigned._(
+    final _$result =
+        _$v ??
+        _$ClientEventAllOfUnsigned._(
           redactedBecause: redactedBecause,
+          mRelations: mRelations,
         );
     replace(_$result);
     return _$result;
