@@ -18,6 +18,12 @@ abstract class ClientEventAllOfUnsigned implements Built<ClientEventAllOfUnsigne
   @BuiltValueField(wireName: r'redacted_because')
   JsonObject? get redactedBecause;
 
+  /// Aggregations of events related to this event, bundled by the server,
+  /// e.g. the latest edit under `m.replace` or the thread summary under
+  /// `m.thread`. See https://spec.matrix.org/v1.13/client-server-api/#aggregations-of-child-events
+  @BuiltValueField(wireName: r'm.relations')
+  JsonObject? get mRelations;
+
   ClientEventAllOfUnsigned._();
 
   factory ClientEventAllOfUnsigned([void updates(ClientEventAllOfUnsignedBuilder b)]) = _$ClientEventAllOfUnsigned;
@@ -46,6 +52,13 @@ class _$ClientEventAllOfUnsignedSerializer implements PrimitiveSerializer<Client
       yield serializers.serialize(
         object.redactedBecause,
         specifiedType: const FullType.nullable(JsonObject),
+      );
+    }
+    if (object.mRelations != null) {
+      yield r'm.relations';
+      yield serializers.serialize(
+        object.mRelations,
+        specifiedType: const FullType(JsonObject),
       );
     }
   }
@@ -78,6 +91,14 @@ class _$ClientEventAllOfUnsignedSerializer implements PrimitiveSerializer<Client
           ) as JsonObject?;
           if (valueDes == null) continue;
           result.redactedBecause = valueDes;
+          break;
+        case r'm.relations':
+          final valueDes = serializers.deserialize(
+            value,
+            specifiedType: const FullType.nullable(JsonObject),
+          ) as JsonObject?;
+          if (valueDes == null) continue;
+          result.mRelations = valueDes;
           break;
         default:
           unhandled.add(key);
